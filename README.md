@@ -59,8 +59,8 @@ There are different ways to handle permissions... Haven't given much thought to 
 - It might be a convenient to make a client library for the backbone models so that we can just do something like `Collaboration.submit(params)`
 
 ##Tradeoffs
-- Two-phase-commits...  I'm not sure how that works in this type of framework
+- Two-phase-commits to MongoDB...  I'm not sure how that works in this type of framework
 - We might end up with lots of route files or concerns that aren't doing a whole lot of real work.
-- Concerns might be more useful if they could be Mongoose models but I'm not sure if Mongoose allows this.
-- Concerns can be abstract to think about.  It's not all that easy to distinguish between Collaborations and CollaborationInvites
+- Concerns might be more useful if they could be Mongoose models but I'm not sure if Mongoose allows for schemas with non-persistent data.
+- Concerns can be abstract to think about.  It's not all that easy to distinguish between Collaborations and CollaborationInvites. It takes some getting used to.
 - Probably lots of other pros and cons that I haven't thought of yet...
