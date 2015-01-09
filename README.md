@@ -1,8 +1,8 @@
-========HIGHLIGHTS============
+===HIGHLIGHTS===
 
 Very rough draft! The basic ideas are these...
 
-The 'concerns' pattern: 
+==The 'concerns' pattern:==
 - I abstracted 'Collaborations' into its own object (in Rails, pseudo-models like this are called 'concerns') 
 - I also could've made CollaborationInvites into it's own separate concern.  I didn't but maybe I should've.
 - A concern is like a model but it does not persist in the database.
@@ -14,7 +14,7 @@ The 'concerns' pattern:
 ---> As long as the model's access-point functions perform as expected, changing the models won't break the concern or the route or anything else.
 ---> If we want, we could even pull the models into separate apps on their own servers. We would just rewrite the model's functions to return data from calls to another server.
 
-Testing Concerns:
+==Testing Concerns:==
 - Make sure the external interfaces produce the expected outputs. 
 
 Testing models:
