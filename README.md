@@ -1,6 +1,6 @@
 #HIGHLIGHTS
 
-* Woops: All of the files and objects that I named 'controllers' are really 'routes / route modules'*
+<strong> Woops: All of the files and objects that I named 'controllers' are really 'routes / route modules'</strong>
 
 My pseudo-code is pretty bad but the basic ideas are there...
 
