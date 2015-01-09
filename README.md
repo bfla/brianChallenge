@@ -27,7 +27,7 @@ My pseudo-code is pretty bad but the basic ideas are there...
 - Versioning ensures that the API is stable for external clients (iOS apps, widgets, partner integrations, whatever)
 
 ##RESTful routes:
-- `Collaborations` and collaboration invites are actually separate things, so they each get their own separate `POST` route and their own separete Route file.
+- `/collaborations` and `/collaborationInvites` are actually separate things, so they each get their own separate `POST` route and their own separete Route file.
 - This results in more routes and more route files, but it keeps each route simple and modular and makes it easy to abstract the data into a concern.
 - It might be tempting to put these into one Route file... No!  Don't do it!
 
