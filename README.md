@@ -51,7 +51,7 @@ There are different ways to handle permissions... Haven't given much thought to 
 - If needed, we can add a backbone model that represents the Collaboration or CollaborationInvite.
 - The model handles the API calls and so forth.
 
-##Shared library (code for both client):
+##Shared library (code for both client and server):
 - Possibly include concerns here so that Backbone can use them.
 - Validations
 - Basic permissions - It would be nice if the client could catch cases where the user obviously doesn't have permission
