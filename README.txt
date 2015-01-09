@@ -5,8 +5,9 @@ This is a very rough draft, but the basic ideas are these...
 The 'concerns' pattern: 
 - I abstracted 'Collaborations' into its own object (in Rails, pseudo-models like this are called 'concerns') 
 - A concern is like a model but it does not persist in the database.
+- It can access multiple models or change the way a model's data is presented/published.
 - It contains all the business logic for the collaborations.
-- It interacts with the works and users models but only through their external interfaces (it never edits those models directly)
+- It interacts with the works and users models but only through their external interfaces
 - It has a corresponding route/controller (whatever Express prefers to call it.)
 - I also could've made CollaborationInvites it's own separate concern.  
 - In this case, I think the invitations and the actual collaborations are similar enough to be a single concern.
