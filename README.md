@@ -6,13 +6,13 @@ Very rough draft! The basic ideas are these...
 - I abstracted 'Collaborations' into its own object (in Rails, pseudo-models like this are called 'concerns') 
 - I also could've made CollaborationInvites into it's own separate concern.  I didn't but maybe I should've.
 - A concern is like a model but it does not persist in the database.
----> It can access multiple models or change the way a model's data is presented/published.
----> It contains all the business logic for the collaborations.
----> It interacts with the works and users models but only through their external interfaces
----> It usually has a corresponding route module
----> The Concern doesn't care what's in the models. It only accesses them via functions. 
----> As long as the model's access-point functions perform as expected, changing the models won't break the concern or the route or anything else.
----> If we want, we could even pull the models into separate apps on their own servers. We would just rewrite the model's functions to return data from calls to another server.
+- It can access multiple models or change the way a model's data is presented/published.
+- It contains all the business logic for the collaborations.
+- It interacts with the works and users models but only through their external interfaces
+- It usually has a corresponding route module
+- The Concern doesn't care what's in the models. It only accesses them via functions. 
+- As long as the model's access-point functions perform as expected, changing the models won't break the concern or the route or anything else.
+- If we want, we could even pull the models into separate apps on their own servers. We would just rewrite the model's functions to return data from calls to another server.
 
 ##Testing Concerns:
 - Make sure the external interfaces produce the expected outputs. 
