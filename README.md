@@ -1,6 +1,8 @@
 #HIGHLIGHTS
 
-Very rough draft! The basic ideas are these...
+* Woops: All of the files and objects that I named 'controllers' are really 'routes / route modules'*
+
+My pseudo-code is pretty bad but the basic ideas are there...
 
 ##The 'concerns' pattern:
 - I abstracted 'Collaborations' into its own object (in Rails, pseudo-models like this are called 'concerns') 
