@@ -30,6 +30,7 @@ My pseudo-code is pretty bad but the basic ideas are there...
 - `/collaborations` and `/collaborationInvites` are actually separate things, so they each get their own separate `POST` route and their own separete Route file.
 - This results in more routes and more route files, but it keeps each route simple and modular and makes it easy to abstract the data into a concern.
 - It might be tempting to put these into one Route file... No!  Don't do it!
+- Something like `works/:id/inviteCollaborator/:user` could also work. But it gets messy if something changes and we need to add collaborations to other types of objects... Or maybe we decide we need to add collaborations to multiple works simultaneously...
 
 ##The Route:
 - The route is only for routing.
