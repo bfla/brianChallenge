@@ -1,5 +1,5 @@
-ApplicationController.extend
-  ApiV2CollaborationController () ->
+
+  ApiV2CollaborationRoute () ->
     # To check permissions we could do something like this or do it in the router...
     before(@create)
     before(@post)

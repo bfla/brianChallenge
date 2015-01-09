@@ -1,25 +1,21 @@
-# All of the business logic unique to collaborators and their invites should go here...
-# This object is like a model, but it doesn't persist in the database.
-# It never interacts with the database directly.  Only through models!
-
-# If we wanted to do it even more modularly, it might be smart to put CollaborationInvites in a separate object...
-# But since the invites are so closely related to Collaborations, I included them in here...
-
 Collaboration () -> # We might want to subclass this somehow... But to keep it simple, I won't do that here...
 
-  @new = (inviter, collaborator, work) =>
-    # Create a new collaboration model but don't save it.  Return true if it works.
-    @collaborator = new Work.getById(collaborator)
-    @inviter = new Work.getById(inviter)
-    @work = new Work.getById(work)
+  _new = (inviter, collaborator, work) =>
+    # Create a new collaboration but don't save any data to the database yet.  Return true if it works.
+    collaborator = new Work.getById(collaborator) # The person who was invited.
+    inviter = new Work.getById(inviter)
+    work = new Work.getById(work)
 
-  @invite = (inviter, collaborator, work) =>
-    @new(inviter, collaborator, work)
-    # Do whatever needs doing
+  _invite = (inviter, collaborator, work) =>
+    collab = new(inviter, collaborator, work) # Create a new Collaborator Object
+    # What I'm doing here is maybe not ideal... since I'm coupling this concern to other objects.
+    Notifiers.new(collaboration.collaborator._id) # notify the person who was invited
+    Mailers.CollaboratorEmail.send(collaboration.collaborator._id) #Send an email to the person who was invited
 
-  @create = (inviter, collaborator, work) =>
+  _create = (inviter, collaborator, work) =>
     # Save the collaboration to the database and return true if successful.
-    @new(inviter, collaborator, work)
+    collab = new(inviter, collaborator, work)
+    collab.save()
   
   @save = () =>
     async.waterfall [

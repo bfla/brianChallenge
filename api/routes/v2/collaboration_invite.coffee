@@ -1,5 +1,5 @@
-ApplicationController.extend
-  ApiV2CollaborationInviteController () ->
+
+ApiV2CollaborationInviteRoute () ->
 
   @create (work) =>
     collaboration = new Collaboration.new(work)
